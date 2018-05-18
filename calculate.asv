@@ -1,7 +1,7 @@
 %% move
-% cd ../classify_grain
+cd ../classify_grain
 
-% [R,ID,IDout_x,IDout_y,IDout_z,N] = catching_postprocess_2999(1);
+[R,ID,IDout_x,IDout_y,IDout_z,N] = catching_postprocess_2999(1);
 
 
 cd ../dumpoutput

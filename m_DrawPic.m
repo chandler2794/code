@@ -80,7 +80,7 @@ cdata = [];
 %            IsPlot = 1;
 %         end
 %     end
-for b =1000
+for b =1:length(A)
     if IsPlot == 1
         p = patch('Faces',facenode,'Vertices',draw_x(:,:,b),'FaceColor','w'); % 原子座標點為 Polygon vertices，Face Color先設定為white
         clear cdata

@@ -1,16 +1,15 @@
 clear all;
 clc;
-filename1 = '8nm_nomin.dump';
+% filename1 = '8nm_nomin.dump';
+% A=importdata(filename1,' ',9);
+cd ../download
 
-A=importdata(filename1,' ',9);
-
-
-filename2 = '8nm_min_test3000.dump';
+filename2 = 'niti_8nm_G30_Temp_0.dump';
 
 AA=importdata(filename2,' ',9);
- 
-B = A.data(:,:);
-BB= AA.data(:,:);
+
+% B = A.data(:,:);
+B= AA.data(:,:);
 
 %% suppose 30 grains
 number_grain_1=18269;
@@ -107,12 +106,17 @@ grain_28=B(z+1:aa,:);
 grain_29=B(aa+1:bb,:);
 grain_30=B(bb+1:cc,:);
 
-%%
-tic 
-for t = 13
-eval(['IDtransfer(BB,grain_',int2str(t),',',int2str(t),');'])
+
+cd ../classify_grain
+for N=1:30
+eval(['output_classify(grain_',int2str(N),',',int2str(N),');'])
 end
-toc
+%%
+% tic
+% for t = 13
+% eval(['IDtransfer(BB,grain_',int2str(t),',',int2str(t),');'])
+% end
+% toc
 
 
 
